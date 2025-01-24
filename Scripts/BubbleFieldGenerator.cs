@@ -69,6 +69,7 @@ public class BubbleFieldGenerator : MonoBehaviour
         float xOffset = 2f * hexRadius; // Горизонтальное смещение между гексагонами
         float yOffset = 1.5f * hexRadius; // Вертикальное смещение между строками
 
+        var rightBubblesCount = 0;
         for (int y = 0; y < rows; y++)
         {
             for (int x = 0; x < cols; x++)
@@ -76,6 +77,8 @@ public class BubbleFieldGenerator : MonoBehaviour
                 // Определяем, какой префаб использовать
                 GameObject prefabToInstantiate = bubbleObject;
                 prefabToInstantiate.GetComponent<BubbleRightLogic>().isBubbleRight = field[y, x] == 1;
+
+                if (field[y, x] == 1) rightBubblesCount++;
 
                 // Вычисляем позицию для гексагона
                 float xPos = x * xOffset;
@@ -91,5 +94,7 @@ public class BubbleFieldGenerator : MonoBehaviour
                 Instantiate(prefabToInstantiate, position, Quaternion.identity, currentBubbleField.transform);
             }
         }
+
+        currentBubbleField.GetComponent<BubblePoppingController>().SetRightPopsCount(rightBubblesCount);
     }
 }

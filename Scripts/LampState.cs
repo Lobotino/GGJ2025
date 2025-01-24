@@ -47,6 +47,15 @@ public class LampState : MonoBehaviour
         StartCoroutine(BlinkLamp(3));
     }
 
+    public void BlinkGreen()
+    {
+        StartCoroutine(BlinkLong(1));
+    }
+
+    public void BlinkRed()
+    {
+        StartCoroutine(BlinkLong(2));
+    }
 
     /// <summary>
     /// Корус для периодического обновления поля.
@@ -65,5 +74,15 @@ public class LampState : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         UpdateState(0);
         yield return new WaitForSeconds(0.2f);
+    }
+
+    /// <summary>
+    /// Корус для периодического обновления поля.
+    /// </summary>
+    private IEnumerator BlinkLong(int color)
+    {
+        UpdateState(color);
+        yield return new WaitForSeconds(0.6f);
+        UpdateState(0);
     }
 }

@@ -8,7 +8,11 @@ public class BubbleTapOnColliderController : MonoBehaviour
     public Sprite poppedSprite; // Новый спрайт, который нужно установить
     private SpriteRenderer spriteRenderer;
 
+    public BubbleRightLogic bubbleRightLogic;
+
     public bool isPopped = false;
+
+    public BubblePoppingController bubblePoppingController;
 
     //частицы
     public ParticleSystem particleSystem; // Ссылка на систему частиц
@@ -16,6 +20,8 @@ public class BubbleTapOnColliderController : MonoBehaviour
     void Start()
     {
         // Получаем SpriteRenderer объекта
+        bubblePoppingController = GetComponentInParent<BubblePoppingController>();
+        bubbleRightLogic = GetComponentInParent<BubbleRightLogic>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         particleSystem = GetComponent<ParticleSystem>();
         if (spriteRenderer == null)
@@ -46,6 +52,14 @@ public class BubbleTapOnColliderController : MonoBehaviour
             spriteRenderer.sprite = poppedSprite;
             particleSystem.Play();
             Vibrate();
+            if (bubbleRightLogic.isBubbleRight)
+            {
+                bubblePoppingController.OnPoppedRight();
+            }
+            else
+            {
+                bubblePoppingController.OnPoppedWrong();
+            }
         }
         else
         {

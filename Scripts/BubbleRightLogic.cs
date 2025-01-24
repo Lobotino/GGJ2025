@@ -10,7 +10,7 @@ public class BubbleRightLogic : MonoBehaviour
     {
         if (isBubbleRight)
         {
-            spriteRenderer.color = Color.green;
+            // spriteRenderer.color = Color.green;
         }
     }
 }
