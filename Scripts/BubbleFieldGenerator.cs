@@ -6,6 +6,16 @@ using UnityEngine.Serialization;
 
 public class BubbleFieldGenerator : MonoBehaviour
 {
+    [SerializeField] private Sprite backgroundCornerTopLeftSprite; // Левый верхний угол
+    [SerializeField] private Sprite backgroundCornerTopRightSprite; // Правый верхний угол
+    [SerializeField] private Sprite backgroundCornerBottomLeftSprite; // Левый нижний угол
+    [SerializeField] private Sprite backgroundCornerBottomRightSprite; // Правый нижний угол
+    [SerializeField] private Sprite backgroundEdgeTopSprite; // Верхний край
+    [SerializeField] private Sprite backgroundEdgeBottomSprite; // Нижний край
+    [SerializeField] private Sprite backgroundEdgeLeftSprite; // Левый край
+    [SerializeField] private Sprite backgroundEdgeRightSprite; // Правый край
+    [SerializeField] private Sprite backgroundCenterSprite; // Центральный элемент
+
     public GameObject bubbleField;
 
     // Префабы для объектов
@@ -120,9 +130,66 @@ public class BubbleFieldGenerator : MonoBehaviour
 
                 // Создаем объект и добавляем его в иерархию
                 Vector3 position = bubbleParent.transform.position + new Vector3(xPos, yPos, 0);
-                // Создаем объект и добавляем его в иерархию
-                Instantiate(prefabToInstantiate, position, Quaternion.identity, bubbleParent.transform);
+                GameObject bubble = Instantiate(prefabToInstantiate, position, Quaternion.identity,
+                    bubbleParent.transform);
+
+                // // Выбираем спрайт для объекта
+                // SpriteRenderer spriteRenderer = GetChildSpriteRendererWithTag(prefabToInstantiate, "background");
+                // if (spriteRenderer != null)
+                // {
+                //     spriteRenderer.sprite = GetSpriteForPosition(x, y, rows, cols);
+                // }
             }
         }
     }
+    //
+    // private Sprite GetSpriteForPosition(int x, int y, int rows, int cols)
+    // {
+    //     // Углы
+    //     if (x == 0 && y == 0) // Левый верхний угол
+    //         return backgroundCornerTopLeftSprite;
+    //     if (x == cols - 1 && y == 0) // Правый верхний угол
+    //         return backgroundCornerTopRightSprite;
+    //     if (x == 0 && y == rows - 1) // Левый нижний угол
+    //         return backgroundCornerBottomLeftSprite;
+    //     if (x == cols - 1 && y == rows - 1) // Правый нижний угол
+    //         return backgroundCornerBottomRightSprite;
+    //
+    //     // Верхний край (исключая углы)
+    //     if (y == 0 && x > 0 && x < cols - 1)
+    //         return backgroundEdgeTopSprite;
+    //
+    //     // Нижний край (исключая углы)
+    //     if (y == rows - 1 && x > 0 && x < cols - 1)
+    //         return backgroundEdgeBottomSprite;
+    //
+    //     // Левый край (с учётом сдвига)
+    //     if (x == 0 && y > 0 && y < rows - 1)
+    //         return backgroundEdgeLeftSprite;
+    //
+    //     // Правый край (с учётом сдвига)
+    //     if (x == cols - 1 && y > 0 && y < rows - 1)
+    //         return backgroundEdgeRightSprite;
+    //
+    //     // Центральные элементы (все элементы, не попавшие в крайние или угловые случаи)
+    //     return backgroundCenterSprite;
+    // }
+    //
+    // // Получаем SpriteRenderer дочернего объекта с тегом "background"
+    // SpriteRenderer GetChildSpriteRendererWithTag(GameObject parent, string tag)
+    // {
+    //     // Находим всех дочерних объектов
+    //     Transform[] children = parent.GetComponentsInChildren<Transform>();
+    //     foreach (Transform child in children)
+    //     {
+    //         // Проверяем тег и наличие SpriteRenderer
+    //         if (child.CompareTag(tag))
+    //         {
+    //             return child.GetComponent<SpriteRenderer>();
+    //         }
+    //     }
+    //
+    //     // Если ничего не найдено, возвращаем null
+    //     return null;
+    // }
 }

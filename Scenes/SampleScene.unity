@@ -3036,6 +3036,42 @@ PrefabInstance:
       propertyPath: bubbleObject
       value: 
       objectReference: {fileID: 4818872692176872449, guid: b1ba4994ed35a455484217331e774c3d, type: 3}
+    - target: {fileID: 1773098594665690030, guid: 4354ec96a6104463b90d9a0ec424681d, type: 3}
+      propertyPath: backgroundCenterSprite
+      value: 
+      objectReference: {fileID: -1986765630, guid: 2a99c66c09fad48c1815553a53373bc7, type: 3}
+    - target: {fileID: 1773098594665690030, guid: 4354ec96a6104463b90d9a0ec424681d, type: 3}
+      propertyPath: backgroundEdgeTopSprite
+      value: 
+      objectReference: {fileID: 423518488, guid: 2a99c66c09fad48c1815553a53373bc7, type: 3}
+    - target: {fileID: 1773098594665690030, guid: 4354ec96a6104463b90d9a0ec424681d, type: 3}
+      propertyPath: backgroundEdgeLeftSprite
+      value: 
+      objectReference: {fileID: -514888749, guid: 2a99c66c09fad48c1815553a53373bc7, type: 3}
+    - target: {fileID: 1773098594665690030, guid: 4354ec96a6104463b90d9a0ec424681d, type: 3}
+      propertyPath: backgroundEdgeRightSprite
+      value: 
+      objectReference: {fileID: -1707028740, guid: 2a99c66c09fad48c1815553a53373bc7, type: 3}
+    - target: {fileID: 1773098594665690030, guid: 4354ec96a6104463b90d9a0ec424681d, type: 3}
+      propertyPath: backgroundEdgeBottomSprite
+      value: 
+      objectReference: {fileID: 487484001, guid: 2a99c66c09fad48c1815553a53373bc7, type: 3}
+    - target: {fileID: 1773098594665690030, guid: 4354ec96a6104463b90d9a0ec424681d, type: 3}
+      propertyPath: backgroundCornerTopLeftSprite
+      value: 
+      objectReference: {fileID: 770442964, guid: 2a99c66c09fad48c1815553a53373bc7, type: 3}
+    - target: {fileID: 1773098594665690030, guid: 4354ec96a6104463b90d9a0ec424681d, type: 3}
+      propertyPath: backgroundCornerTopRightSprite
+      value: 
+      objectReference: {fileID: 1139302899, guid: 2a99c66c09fad48c1815553a53373bc7, type: 3}
+    - target: {fileID: 1773098594665690030, guid: 4354ec96a6104463b90d9a0ec424681d, type: 3}
+      propertyPath: backgroundCornerBottomLeftSprite
+      value: 
+      objectReference: {fileID: 1820772868, guid: 2a99c66c09fad48c1815553a53373bc7, type: 3}
+    - target: {fileID: 1773098594665690030, guid: 4354ec96a6104463b90d9a0ec424681d, type: 3}
+      propertyPath: backgroundCornerBottomRightSprite
+      value: 
+      objectReference: {fileID: -1576045060, guid: 2a99c66c09fad48c1815553a53373bc7, type: 3}
     - target: {fileID: 1786757679017542973, guid: 4354ec96a6104463b90d9a0ec424681d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.52

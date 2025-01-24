@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class BubbleRightLogic : MonoBehaviour
 {
+    public SpriteRenderer spriteRenderer;
+
     public bool isBubbleRight = false;
 
-    public void OnStart()
+    public void Start()
     {
         if (isBubbleRight)
         {
-            GetComponent<SpriteRenderer>().color = Color.green;
+            spriteRenderer.color = Color.green;
         }
     }
 }
