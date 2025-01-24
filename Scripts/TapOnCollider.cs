@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using System.Collections;
 
@@ -6,19 +5,26 @@ public class TapOnCollider : MonoBehaviour
 {
     private bool isTouching = false; // Флаг начала касания
     private float touchStartTime; // Время начала касания
-    private const float maxTouchDuration = 0.05f; // Максимальная длительность, чтобы считать это "нажатием"
     public Sprite poppedSprite; // Новый спрайт, который нужно установить
     private SpriteRenderer spriteRenderer;
 
     public bool isPopped = false;
 
+    //частицы
+    public ParticleSystem particleSystem; // Ссылка на систему частиц
+
     void Start()
     {
         // Получаем SpriteRenderer объекта
         spriteRenderer = GetComponent<SpriteRenderer>();
+        particleSystem = GetComponentInChildren<ParticleSystem>();
         if (spriteRenderer == null)
         {
             Debug.LogError("На объекте отсутствует SpriteRenderer!");
+        }
+        if (particleSystem == null)
+        {
+            Debug.LogError("На объекте отсутствует ParticleSystem!");
         }
     }
 
@@ -29,19 +35,6 @@ public class TapOnCollider : MonoBehaviour
         OnTap();
     }
 
-    void OnMouseUp()
-    {
-        // if (isPopped) return;
-        // if (isTouching)
-        // {
-        //     float touchDuration = Time.time - touchStartTime;
-        //     
-        //     OnTap();
-        //
-        //     isTouching = false;
-        // }
-    }
-
     private void OnTap()
     {
         isPopped = true;
@@ -49,8 +42,8 @@ public class TapOnCollider : MonoBehaviour
         {
             // Заменяем спрайт
             spriteRenderer.sprite = poppedSprite;
+            particleSystem.Play();
             Vibrate();
-            Debug.Log($"Sprite changed on {gameObject.name}");
         }
         else
         {
@@ -60,13 +53,6 @@ public class TapOnCollider : MonoBehaviour
 
     private void Vibrate()
     {
-        try
-        {
-            Handheld.Vibrate();
-        }
-        catch (Exception ex)
-        {
-            //ignore
-        }
+        Handheld.Vibrate();
     }
 }
