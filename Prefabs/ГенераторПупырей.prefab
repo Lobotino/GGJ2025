@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &215574869667477522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1786757679017542973}
+  - component: {fileID: 1773098594665690030}
+  m_Layer: 0
+  m_Name: "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u041F\u0443\u043F\u044B\u0440\u0435\u0438\u0306"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1786757679017542973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215574869667477522}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.52, y: 3.29, z: -9.978919}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1773098594665690030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215574869667477522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23112a362996c44518d7140aaab56391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubbleField: {fileID: 1110029533088015057, guid: 8cc5bf0ef11774818ab73f0b8e63b854, type: 3}
+  rightBubble: {fileID: 6300858076874254162, guid: e9a9d980741634bf696735d0b6e7c46f, type: 3}
+  wrongBubble: {fileID: 4818872692176872449, guid: b1ba4994ed35a455484217331e774c3d, type: 3}
+  cellSize: 1
+  updateInterval: 3

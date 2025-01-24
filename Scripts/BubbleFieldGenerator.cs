@@ -1,0 +1,90 @@
+using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Serialization;
+
+public class BubbleFieldGenerator : MonoBehaviour
+{
+    public GameObject bubbleField;
+
+    // Префабы для объектов
+    public GameObject rightBubble; // Префаб для типа 1
+    public GameObject wrongBubble; // Префаб для типа 0
+
+    // Размер ячейки
+    private float cellSize = 1.0f;
+
+    // Время между обновлениями поля (в секундах)
+    public float updateInterval = 3.0f;
+
+    // Поле данных
+    private int[,] currentField;
+
+    private void Start()
+    {
+        // Вычисляем размер ячейки на основе размера первого объекта
+        if (rightBubble != null)
+        {
+            SpriteRenderer spriteRenderer = rightBubble.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                // Размер ячейки = ширина спрайта (или высота, если объект вертикальный)
+                cellSize = spriteRenderer.bounds.size.x; // или bounds.size.y для вертикальных объектов
+            }
+        }
+        // Пример начального поля
+        currentField = new int[,]
+        {
+            { 0, 0, 0, 0, 0, 0 },
+            { 0, 1, 1, 0, 1, 0 },
+            { 0, 1, 1, 1, 1, 0 },
+            { 0, 0, 1, 1, 0, 0 },
+            { 0, 0, 0, 0, 0, 0 }
+        };
+
+        // Запуск корутины
+        StartCoroutine(GenerateFieldPeriodically());
+    }
+
+    /// <summary>
+    /// Корус для периодического обновления поля.
+    /// </summary>
+    private IEnumerator GenerateFieldPeriodically()
+    {
+        while (true)
+        {
+            // Генерируем поле
+            GenerateField(currentField);
+
+            // Ждём указанное время
+            yield return new WaitForSeconds(updateInterval);
+        }
+    }
+
+    /// <summary>
+    /// Генерирует игровое поле на основе двумерного массива.
+    /// </summary>
+    /// <param name="field">Двумерный массив (0 и 1), определяющий типы объектов.</param>
+    private void GenerateField(int[,] field)
+    {
+        var bubbleParent = Instantiate(bubbleField, transform.position, Quaternion.identity);
+
+        int rows = field.GetLength(0);
+        int cols = field.GetLength(1);
+
+        for (int y = 0; y < rows; y++)
+        {
+            for (int x = 0; x < cols; x++)
+            {
+                // Определяем, какой префаб использовать
+                GameObject prefabToInstantiate = field[y, x] == 1 ? rightBubble : wrongBubble;
+
+                // Вычисляем позицию для объекта
+                Vector3 position = bubbleParent.transform.position + new Vector3(x * cellSize, -y * cellSize, -3);
+
+                // Создаем объект и добавляем его в иерархию
+                Instantiate(prefabToInstantiate, position, Quaternion.identity, bubbleParent.transform);
+            }
+        }
+    }
+}
