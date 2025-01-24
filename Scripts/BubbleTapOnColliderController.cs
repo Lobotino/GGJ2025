@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class TapOnCollider : MonoBehaviour
+public class BubbleTapOnColliderController : MonoBehaviour
 {
     private bool isTouching = false; // Флаг начала касания
     private float touchStartTime; // Время начала касания
@@ -17,7 +17,7 @@ public class TapOnCollider : MonoBehaviour
     {
         // Получаем SpriteRenderer объекта
         spriteRenderer = GetComponent<SpriteRenderer>();
-        particleSystem = GetComponentInChildren<ParticleSystem>();
+        particleSystem = GetComponent<ParticleSystem>();
         if (spriteRenderer == null)
         {
             Debug.LogError("На объекте отсутствует SpriteRenderer!");

@@ -22,7 +22,7 @@ public class TouchInputController : MonoBehaviour
                     Debug.Log($"Touched 2D collider at {touchPosition}!");
                     if (hit.collider.CompareTag("Pop"))
                     {
-                        hit.collider.gameObject.GetComponent<TapOnCollider>().OnTap();
+                        hit.collider.gameObject.GetComponent<BubbleTapOnColliderController>().OnTap();
                     }
                 }
             }

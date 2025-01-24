@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -8,8 +9,7 @@ public class BubbleFieldGenerator : MonoBehaviour
     public GameObject bubbleField;
 
     // Префабы для объектов
-    public GameObject rightBubble; // Префаб для типа 1
-    public GameObject wrongBubble; // Префаб для типа 0
+    public GameObject bubbleObject;
 
     // Радиус гексагона (расстояние между центрами соседних гексагонов)
     private float hexRadius;
@@ -23,9 +23,9 @@ public class BubbleFieldGenerator : MonoBehaviour
     private void Start()
     {
         // Вычисляем размер ячейки на основе размера первого объекта
-        if (rightBubble != null)
+        if (bubbleObject != null)
         {
-            SpriteRenderer spriteRenderer = rightBubble.GetComponent<SpriteRenderer>();
+            SpriteRenderer spriteRenderer = bubbleObject.GetComponentInChildren<SpriteRenderer>();
             if (spriteRenderer != null)
             {
                 hexRadius = spriteRenderer.bounds.size.x / 2f; // Половина ширины спрайта
@@ -106,7 +106,8 @@ public class BubbleFieldGenerator : MonoBehaviour
             for (int x = 0; x < cols; x++)
             {
                 // Определяем, какой префаб использовать
-                GameObject prefabToInstantiate = field[y, x] == 1 ? rightBubble : wrongBubble;
+                GameObject prefabToInstantiate = bubbleObject;
+                prefabToInstantiate.GetComponent<BubbleRightLogic>().isBubbleRight = field[y, x] == 1;
 
                 // Вычисляем позицию для гексагона
                 float xPos = x * xOffset;
