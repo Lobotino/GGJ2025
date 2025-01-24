@@ -22,6 +22,7 @@ public class TapOnCollider : MonoBehaviour
         {
             Debug.LogError("На объекте отсутствует SpriteRenderer!");
         }
+
         if (particleSystem == null)
         {
             Debug.LogError("На объекте отсутствует ParticleSystem!");
@@ -35,8 +36,9 @@ public class TapOnCollider : MonoBehaviour
         OnTap();
     }
 
-    private void OnTap()
+    public void OnTap()
     {
+        if (isPopped) return;
         isPopped = true;
         if (spriteRenderer != null && poppedSprite != null)
         {

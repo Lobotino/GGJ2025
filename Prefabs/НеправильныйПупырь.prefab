@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 1550100299654370201}
   - component: {fileID: 4403119867770390014}
   - component: {fileID: 7193158375103505655}
-  - component: {fileID: 6793701693170760647}
+  - component: {fileID: 7320444100721351682}
   m_Layer: 0
   m_Name: "\u041D\u0435\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0438\u0306\u041F\u0443\u043F\u044B\u0440\u044C"
-  m_TagString: Untagged
+  m_TagString: Pop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,8 +105,8 @@ MonoBehaviour:
   poppedSprite: {fileID: -1743930484644362951, guid: 3935c2bb7f9c44c8aa857e60d2e5f7f3, type: 3}
   isPopped: 0
   particleSystem: {fileID: 4573857322154854634, guid: ff4e2655fcfb34d16a7737989ec28bb2, type: 3}
---- !u!70 &6793701693170760647
-CapsuleCollider2D:
+--- !u!60 &7320444100721351682
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -139,9 +139,27 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.01000007, y: 0.008338791}
-  m_Size: {x: 1.6017625, y: 1.3185118}
-  m_Direction: 1
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.7, y: 1.7}
+    newSize: {x: 1.71, y: 1.71}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.049999997, y: 0.84999996}
+      - {x: -0.8558977, y: 0.43461332}
+      - {x: -0.85589784, y: -0.43102208}
+      - {x: -0.04, y: -0.84999996}
+      - {x: 0.013328753, y: -0.8558977}
+      - {x: 0.84999996, y: -0.44}
+      - {x: 0.84999996, y: 0.4382044}
+      - {x: 0.025124349, y: 0.85589767}
+  m_UseDelaunayMesh: 0
 --- !u!1 &7050525790325230453
 GameObject:
   m_ObjectHideFlags: 0
