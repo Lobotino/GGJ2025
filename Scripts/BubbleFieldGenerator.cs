@@ -11,8 +11,8 @@ public class BubbleFieldGenerator : MonoBehaviour
     public GameObject rightBubble; // Префаб для типа 1
     public GameObject wrongBubble; // Префаб для типа 0
 
-    // Размер ячейки
-    private float cellSize = 1.0f;
+    // Радиус гексагона (расстояние между центрами соседних гексагонов)
+    private float hexRadius;
 
     // Время между обновлениями поля (в секундах)
     public float updateInterval = 3.0f;
@@ -28,14 +28,13 @@ public class BubbleFieldGenerator : MonoBehaviour
             SpriteRenderer spriteRenderer = rightBubble.GetComponent<SpriteRenderer>();
             if (spriteRenderer != null)
             {
-                // Размер ячейки = ширина спрайта (или высота, если объект вертикальный)
-                cellSize = spriteRenderer.bounds.size.x; // или bounds.size.y для вертикальных объектов
+                hexRadius = spriteRenderer.bounds.size.x / 2f; // Половина ширины спрайта
             }
         }
+
         // Пример начального поля
         currentField = new int[,]
         {
-            { 0, 0, 0, 0, 0, 0 },
             { 0, 1, 1, 0, 1, 0 },
             { 0, 1, 1, 1, 1, 0 },
             { 0, 0, 1, 1, 0, 0 },
@@ -61,16 +60,46 @@ public class BubbleFieldGenerator : MonoBehaviour
         }
     }
 
+    // /// <summary>
+    // /// Генерирует игровое поле на основе двумерного массива.
+    // /// </summary>
+    // /// <param name="field">Двумерный массив (0 и 1), определяющий типы объектов.</param>
+    // private void GenerateField(int[,] field)
+    // {
+    //     var bubbleParent = Instantiate(bubbleField, transform.position, Quaternion.identity);
+    //
+    //     int rows = field.GetLength(0);
+    //     int cols = field.GetLength(1);
+    //
+    //     for (int y = 0; y < rows; y++)
+    //     {
+    //         for (int x = 0; x < cols; x++)
+    //         {
+    //             // Определяем, какой префаб использовать
+    //             GameObject prefabToInstantiate = field[y, x] == 1 ? rightBubble : wrongBubble;
+    //
+    //             // Вычисляем позицию для объекта
+    //             Vector3 position = bubbleParent.transform.position + new Vector3(x * cellSize, -y * cellSize, -3);
+    //
+    //             // Создаем объект и добавляем его в иерархию
+    //             Instantiate(prefabToInstantiate, position, Quaternion.identity, bubbleParent.transform);
+    //         }
+    //     }
+    // }
+
     /// <summary>
-    /// Генерирует игровое поле на основе двумерного массива.
+    /// Генерирует гексагональное игровое поле на основе двумерного массива.
     /// </summary>
     /// <param name="field">Двумерный массив (0 и 1), определяющий типы объектов.</param>
-    private void GenerateField(int[,] field)
+    public void GenerateField(int[,] field)
     {
         var bubbleParent = Instantiate(bubbleField, transform.position, Quaternion.identity);
 
         int rows = field.GetLength(0);
         int cols = field.GetLength(1);
+
+        float xOffset = 2f * hexRadius; // Горизонтальное смещение между гексагонами
+        float yOffset = 1.5f * hexRadius; // Вертикальное смещение между строками
 
         for (int y = 0; y < rows; y++)
         {
@@ -79,9 +108,17 @@ public class BubbleFieldGenerator : MonoBehaviour
                 // Определяем, какой префаб использовать
                 GameObject prefabToInstantiate = field[y, x] == 1 ? rightBubble : wrongBubble;
 
-                // Вычисляем позицию для объекта
-                Vector3 position = bubbleParent.transform.position + new Vector3(x * cellSize, -y * cellSize, -3);
+                // Вычисляем позицию для гексагона
+                float xPos = x * xOffset;
+                if (y % 2 != 0) // Смещаем нечетные строки
+                {
+                    xPos += xOffset / 2f;
+                }
 
+                float yPos = -y * yOffset; // Сдвигаем строки вниз
+
+                // Создаем объект и добавляем его в иерархию
+                Vector3 position = bubbleParent.transform.position + new Vector3(xPos, yPos, 0);
                 // Создаем объект и добавляем его в иерархию
                 Instantiate(prefabToInstantiate, position, Quaternion.identity, bubbleParent.transform);
             }

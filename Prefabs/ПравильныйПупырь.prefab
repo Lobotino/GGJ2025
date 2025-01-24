@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4539303388335530820}
   - component: {fileID: 8930712338416696469}
-  - component: {fileID: 4788329660406605373}
+  - component: {fileID: 2230222976416730151}
+  - component: {fileID: 184136161974929483}
   m_Layer: 0
   m_Name: "\u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0438\u0306\u041F\u0443\u043F\u044B\u0440\u044C"
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2734910846926166789, guid: 3c10e5e8185a8411ba8835bb62129fa1, type: 3}
-  m_Color: {r: 0.31228644, g: 0.7529412, b: 0.20392156, a: 1}
+  m_Sprite: {fileID: 6282276142116487308, guid: 63e44ce74721a47aca89f739015ef2ea, type: 3}
+  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -88,8 +89,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4788329660406605373
-BoxCollider2D:
+--- !u!114 &2230222976416730151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6300858076874254162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6dab268269543909c48d5e14d800b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poppedSprite: {fileID: -1743930484644362951, guid: 3935c2bb7f9c44c8aa857e60d2e5f7f3, type: 3}
+  isPopped: 0
+--- !u!60 &184136161974929483
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -126,11 +141,20 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.71, y: 1.71}
+    oldSize: {x: 1.7, y: 1.7}
     newSize: {x: 1.71, y: 1.71}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.7, y: 1.7}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.02280496, y: 0.8621138}
+      - {x: -0.84999996, y: 0.45}
+      - {x: -0.84999996, y: -0.45}
+      - {x: -0.021260217, y: -0.85605687}
+      - {x: 0.049999997, y: -0.84999996}
+      - {x: 0.84999996, y: -0.44577238}
+      - {x: 0.85605687, y: 0.45760164}
+      - {x: 0.07, y: 0.84999996}
+  m_UseDelaunayMesh: 0
