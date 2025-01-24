@@ -1,27 +1,42 @@
-using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class BubbleFieldGenerator : MonoBehaviour
+public class InstructionsGenerator : MonoBehaviour
 {
-    public InstructionsGenerator instructionsGenerator;
+    public Sprite insrtuctionWrongSprite;
+    public Sprite insrtuctionRightSprite;
 
+    public Sprite[] instructionSpritesItems;
+    public SpriteRenderer instructionSpriteObject;
+
+    public float updateInstructionsInterval = 15f;
+    public GameObject bubbleField;
+    public GameObject bubbleObject;
     public LampState lampStateUpdater;
 
-    public GameObject bubbleField;
-
-    // Префабы для объектов
-    public GameObject bubbleObject;
-
-    // Радиус гексагона (расстояние между центрами соседних гексагонов)
-    private float hexRadius;
-
-    // Время между обновлениями поля (в секундах)
-    public float createBubblesInterval = 4.0f;
+    private readonly int[][,] _correctInstructions =
+    {
+        new[,]
+        {
+            { 0, 0, 1, 1, 1, 1 },
+            { 0, 1, 0, 0, 1, 0 },
+            { 0, 0, 1, 0, 0, 1 },
+            { 0, 1, 0, 0, 1, 0 },
+            { 0, 0, 0, 0, 0, 0 },
+        },
+        new[,]
+        {
+            { 0, 0, 0, 0, 1, 1 },
+            { 0, 0, 1, 1, 1, 0 },
+            { 0, 0, 1, 1, 1, 0 },
+            { 1, 1, 1, 0, 0, 0 },
+            { 1, 1, 0, 0, 0, 0 },
+        },
+    };
 
     private GameObject currentBubbleField = null;
+    private float hexRadius;
 
     private void Start()
     {
@@ -36,22 +51,47 @@ public class BubbleFieldGenerator : MonoBehaviour
         }
 
         // Запуск корутины
-        StartCoroutine(GenerateFieldPeriodically());
+        StartCoroutine(GenerateInstructionsPeriodically());
     }
 
-    /// <summary>
-    /// Корус для периодического обновления поля.
-    /// </summary>
-    private IEnumerator GenerateFieldPeriodically()
+    private int _currentInstructionsIndex = 0;
+
+    public int[,] GetCurrentInstructions()
+    {
+        return _correctInstructions[_currentInstructionsIndex];
+    }
+
+    private IEnumerator GenerateInstructionsPeriodically()
     {
         while (true)
         {
             // Генерируем поле
-            GenerateField(instructionsGenerator.GetCurrentInstructions());
+            ChangeInstructions();
+            ChangeInstructionItem();
+            GenerateField(_correctInstructions[_currentInstructionsIndex]);
 
             // Ждём указанное время
-            yield return new WaitForSeconds(createBubblesInterval);
+            yield return new WaitForSeconds(updateInstructionsInterval);
         }
+    }
+
+    private void ChangeInstructionItem()
+    {
+        instructionSpriteObject.sprite = instructionSpritesItems[_currentInstructionsIndex];
+    }
+
+    private void ChangeInstructions()
+    {
+        if (_currentInstructionsIndex + 1 >= _correctInstructions.Length)
+        {
+            _currentInstructionsIndex = 0;
+        }
+        else
+        {
+            _currentInstructionsIndex++;
+        }
+
+        lampStateUpdater.BlinkYellow();
     }
 
     /// <summary>
@@ -60,6 +100,8 @@ public class BubbleFieldGenerator : MonoBehaviour
     /// <param name="field">Двумерный массив (0 и 1), определяющий типы объектов.</param>
     private void GenerateField(int[,] field)
     {
+        Destroy(currentBubbleField);
+
         currentBubbleField =
             Instantiate(bubbleField, transform.position + new Vector3(0f, 0f, -1f), Quaternion.identity);
 
@@ -75,7 +117,16 @@ public class BubbleFieldGenerator : MonoBehaviour
             {
                 // Определяем, какой префаб использовать
                 GameObject prefabToInstantiate = bubbleObject;
-                prefabToInstantiate.GetComponent<BubbleRightLogic>().isBubbleRight = field[y, x] == 1;
+
+                if (field[y, x] == 1)
+                {
+                    prefabToInstantiate.GetComponent<SpriteRenderer>().sprite = insrtuctionRightSprite;
+                }
+                else
+                {
+                    prefabToInstantiate.GetComponent<SpriteRenderer>().sprite = insrtuctionWrongSprite;
+                }
+
 
                 // Вычисляем позицию для гексагона
                 float xPos = x * xOffset;

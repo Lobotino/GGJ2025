@@ -36,7 +36,7 @@ public class GameLogicScript : MonoBehaviour
         Debug.Log("Tilt: " + tilt);
 
         // Проверяем, нужно ли переключить состояние камеры
-        if (tilt is > 320 or < 50)
+        if (tilt is > 310 or < 40)
         {
             if (isInTopPosition)
             {

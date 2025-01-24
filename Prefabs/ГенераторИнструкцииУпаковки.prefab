@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4014965181625364312}
-  - component: {fileID: 4419973836244832286}
+  - component: {fileID: 1226782660267654204}
   m_Layer: 3
   m_Name: "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0418\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438\u0423\u043F\u0430\u043A\u043E\u0432\u043A\u0438"
   m_TagString: Untagged
@@ -114,14 +114,14 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.15, y: 10.99, z: -10.089065}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1746153711317435783}
   - {fileID: 2496369379438625690}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4419973836244832286
+--- !u!114 &1226782660267654204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,21 +130,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6103132163489482602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23112a362996c44518d7140aaab56391, type: 3}
+  m_Script: {fileID: 11500000, guid: 596897888c1b46abbf943449f7ef065e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isConvayer: 0
-  bubbleField: {fileID: 4624385283912200005, guid: 01b024d1eaac84defa5040bf56f9595a, type: 3}
-  bubbleObject: {fileID: 3733936103250137939, guid: 0e23dd1a731534037bcebe9998b7434c, type: 3}
-  instructionSpriteObject: {fileID: 2735739110958366490}
-  currentCorrectPopsIndex: 0
   insrtuctionWrongSprite: {fileID: -9079626991706403856, guid: 7cc459d65a69c4b90960a671c7ef4858, type: 3}
   insrtuctionRightSprite: {fileID: -6571866610958455252, guid: 1d1c9013f4aeb46a59cf1de8ce4fe287, type: 3}
-  instructionSprites:
+  instructionSpritesItems:
   - {fileID: 402415012484898305, guid: ccac1a8c708b643998ddd1990ccb4d26, type: 3}
   - {fileID: -2710618932912824625, guid: 3a864999e0444425b8b8c6b9f0e4cd51, type: 3}
-  - {fileID: 402415012484898305, guid: ccac1a8c708b643998ddd1990ccb4d26, type: 3}
-  updateInterval: 3
+  instructionSpriteObject: {fileID: 2735739110958366490}
+  updateInstructionsInterval: 15
+  bubbleField: {fileID: 4624385283912200005, guid: 01b024d1eaac84defa5040bf56f9595a, type: 3}
+  bubbleObject: {fileID: 3733936103250137939, guid: 0e23dd1a731534037bcebe9998b7434c, type: 3}
+  lampStateUpdater: {fileID: 0}
 --- !u!1 &6573132030732242892
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,8 +169,8 @@ Transform:
   m_GameObject: {fileID: 6573132030732242892}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.65, y: -1.07, z: -2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.32, y: -1.26, z: -2}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4014965181625364312}
