@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e88d84cac6a7943cdb84399a151f6436
+guid: 1d1c9013f4aeb46a59cf1de8ce4fe287
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6656769619803002209
-    second: popout2_0
+      213: -6571866610958455252
+    second: gex_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: popout2_0
+      name: gex_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 170
-        height: 170
+        width: 182
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 16558fb33b8916c50800000000000000
-      internalID: 6656769619803002209
+      spriteID: c2e2296f22a0cc4a0800000000000000
+      internalID: -6571866610958455252
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      popout2_0: 6656769619803002209
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

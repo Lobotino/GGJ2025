@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &215574869667477522
+--- !u!1 &6103132163489482602
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1786757679017542973}
-  - component: {fileID: 1773098594665690030}
-  m_Layer: 0
-  m_Name: "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u041F\u0443\u043F\u044B\u0440\u0435\u0438\u0306"
+  - component: {fileID: 4014965181625364312}
+  - component: {fileID: 4419973836244832286}
+  m_Layer: 3
+  m_Name: "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0418\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438\u0423\u043F\u0430\u043A\u043E\u0432\u043A\u0438"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1786757679017542973
+--- !u!4 &4014965181625364312
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 215574869667477522}
+  m_GameObject: {fileID: 6103132163489482602}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.52, y: 3.29, z: -9.978919}
+  m_LocalPosition: {x: 4.15, y: 10.99, z: -10.089065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1773098594665690030
+--- !u!114 &4419973836244832286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 215574869667477522}
+  m_GameObject: {fileID: 6103132163489482602}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23112a362996c44518d7140aaab56391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isConvayer: 1
-  bubbleField: {fileID: 1110029533088015057, guid: 8cc5bf0ef11774818ab73f0b8e63b854, type: 3}
-  bubbleObject: {fileID: 4818872692176872449, guid: b1ba4994ed35a455484217331e774c3d, type: 3}
+  isConvayer: 0
+  bubbleField: {fileID: 4624385283912200005, guid: 01b024d1eaac84defa5040bf56f9595a, type: 3}
+  bubbleObject: {fileID: 3733936103250137939, guid: 0e23dd1a731534037bcebe9998b7434c, type: 3}
+  insrtuctionRightSprite: {fileID: -6571866610958455252, guid: 1d1c9013f4aeb46a59cf1de8ce4fe287, type: 3}
   updateInterval: 3
