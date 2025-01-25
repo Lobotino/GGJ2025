@@ -302,6 +302,10 @@ PrefabInstance:
       propertyPath: timeout
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3814706719003034003, guid: 45322f2e612324d0dbd504fcc26c8a01, type: 3}
+      propertyPath: needToFinishGame
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

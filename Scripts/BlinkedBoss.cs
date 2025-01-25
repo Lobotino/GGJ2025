@@ -23,6 +23,9 @@ public class BlinkedBoss : MonoBehaviour
     private GameController gameController;
     private int strikePops = 0;
 
+    public Sprite[] bossReplics;
+    public SpriteRenderer messageSpriteRenderer;
+
     private void Start()
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
@@ -65,6 +68,7 @@ public class BlinkedBoss : MonoBehaviour
 
     private IEnumerator ShowMessageWithDelay()
     {
+        messageSpriteRenderer.sprite = bossReplics[Random.Range(0, bossReplics.Length)];
         bossMessage.SetActive(true);
         messageIsActive = true;
         yield return new WaitForSeconds(Random.Range(minBossMessageDuration, maxBossMessageDuration));

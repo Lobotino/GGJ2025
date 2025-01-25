@@ -3729,9 +3729,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1625175613446065759, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625175613446065759, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625175613446065759, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7469
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625175613446065759, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625175613446065759, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625175613446065759, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2567830259862517465, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
       propertyPath: m_Name
       value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393806910270888410, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4108887559175966073, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
       propertyPath: maxBossInterval
@@ -3742,6 +3770,14 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4108887559175966073, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+      propertyPath: messageSpriteRenderer
+      value: 
+      objectReference: {fileID: 5936986343933715712}
+    - target: {fileID: 4108887559175966073, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+      propertyPath: bossReplics.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108887559175966073, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
       propertyPath: maxBossMessageDuration
       value: 2.5
       objectReference: {fileID: 0}
@@ -3749,6 +3785,18 @@ PrefabInstance:
       propertyPath: minBossMessageDuration
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4108887559175966073, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+      propertyPath: 'bossReplics.Array.data[0]'
+      value: 
+      objectReference: {fileID: 9030597734088750061, guid: 82c5242d37b1a4411a12551db13dff05, type: 3}
+    - target: {fileID: 4108887559175966073, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+      propertyPath: 'bossReplics.Array.data[1]'
+      value: 
+      objectReference: {fileID: -7046258132910750096, guid: 22b83199e96184decad92a4d59b8f06b, type: 3}
+    - target: {fileID: 4108887559175966073, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+      propertyPath: 'bossReplics.Array.data[2]'
+      value: 
+      objectReference: {fileID: -6893308443034365055, guid: c0f19e2eeea1c454fa26b585fcd44921, type: 3}
     - target: {fileID: 4882756885899966815, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.80320674
@@ -3801,11 +3849,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6202285548136417949, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+--- !u!212 &5936986343933715712 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6974149016754481202, guid: 9a5bbc746105248f0afba51c8042b084, type: 3}
+  m_PrefabInstance: {fileID: 5936986343933715711}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6462678212603779192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3828,7 +3885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4014965181625364312, guid: 8b5c788366b7d4cbf963a010a2e5f94c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.92
+      value: 3.39
       objectReference: {fileID: 0}
     - target: {fileID: 4014965181625364312, guid: 8b5c788366b7d4cbf963a010a2e5f94c, type: 3}
       propertyPath: m_LocalPosition.y
