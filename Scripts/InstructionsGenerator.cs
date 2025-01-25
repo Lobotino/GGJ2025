@@ -10,10 +10,8 @@ public class InstructionsGenerator : MonoBehaviour
     public Sprite[] instructionSpritesItems;
     public SpriteRenderer instructionSpriteObject;
 
-    public float updateInstructionsInterval = 15f;
     public GameObject bubbleField;
     public GameObject bubbleObject;
-    public LampState instructionsLampStateUpdater;
 
     public GameController gameController;
 
@@ -145,7 +143,6 @@ public class InstructionsGenerator : MonoBehaviour
         {
             instructionSpriteObject.sprite = instructionSpritesItems[0];
             GenerateField(_correctInstructions[0]);
-            instructionsLampStateUpdater.BlinkYellow();
         }
     }
 
@@ -168,7 +165,6 @@ public class InstructionsGenerator : MonoBehaviour
 
         instructionSpriteObject.sprite = instructionSpritesItems[_currentInstructionsIndex];
         GenerateField(_correctInstructions[_currentInstructionsIndex]);
-        instructionsLampStateUpdater.BlinkYellow();
     }
 
     /// <summary>

@@ -20,6 +20,13 @@ public class GameController : MonoBehaviour
 
     private int countSuccessScore = 0;
 
+    public GameObject freeGameExitDoor;
+
+    public void Start()
+    {
+        freeGameExitDoor.SetActive(FreeGameData.IsFreeGameEnabled);
+    }
+
     public void AddTotalScore(int score)
     {
         this.score += score;
@@ -27,11 +34,7 @@ public class GameController : MonoBehaviour
 
     public void OnFailedPopsFinish()
     {
-        if (FreeGameData.IsFreeGameEnabled)
-        {
-            finishLamp.BlinkGreen();
-        }
-        else
+        if (!FreeGameData.IsFreeGameEnabled)
         {
             finishLamp.BlinkRed();
         }
@@ -43,13 +46,12 @@ public class GameController : MonoBehaviour
         {
             instructionsGenerator.ChangeInstructions();
             countSuccessScore++;
-            if (countSuccessScore > 5)
+            if (countSuccessScore > 7)
             {
                 GameOverByWin();
             }
+            finishLamp.BlinkGreen();
         }
-
-        finishLamp.BlinkGreen();
     }
 
     public void GameOverByWin()

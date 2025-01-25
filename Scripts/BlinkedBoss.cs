@@ -42,7 +42,7 @@ public class BlinkedBoss : MonoBehaviour
         if (messageIsActive)
         {
             strikePops++;
-            if (strikePops > 8)
+            if (strikePops > 6)
             {
                 GameOverByBoss();
                 return;
@@ -76,7 +76,9 @@ public class BlinkedBoss : MonoBehaviour
     {
         while (needToBlink)
         {
-            float randomBossInterval = Random.Range(minBossInterval, maxBossInterval);
+            var randomBossInterval = Random.Range(minBossInterval, maxBossInterval);
+            if (bossIsActive) randomBossInterval /= 3;
+
             // Ждем случайный интервал
             yield return new WaitForSeconds(randomBossInterval);
 

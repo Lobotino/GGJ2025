@@ -6,17 +6,12 @@ public class MainMenu : MonoBehaviour
     public void GoToNormalGame()
     {
         FreeGameData.IsFreeGameEnabled = false;
-        LoadGame();
+        SceneManager.LoadScene("FirstDialog");
     }
 
     public void GoToFreeGame()
     {
         FreeGameData.IsFreeGameEnabled = true;
-        LoadGame();
-    }
-
-    private void LoadGame()
-    {
         SceneManager.LoadScene("Game");
     }
 }

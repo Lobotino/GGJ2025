@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ScreenFadeEndGame : MonoBehaviour
 {
-    public Image fadeImage;      // Ссылка на Image, который будет затемняться/раззатемняться
+    public Image fadeImage; // Ссылка на Image, который будет затемняться/раззатемняться
     public float fadeDuration = 1f; // Длительность анимации в секундах
-    public float timeout = 2f;   // Таймаут перед затемнением
-    
+    public float timeout = 2f; // Таймаут перед затемнением
+
     private void Start()
     {
         if (fadeImage != null)
@@ -23,6 +23,7 @@ public class ScreenFadeEndGame : MonoBehaviour
     private IEnumerator StartSequence()
     {
         yield return Fade(1, 0); // Раззатемнение
+        if (Mathf.Approximately(timeout, -1)) yield break;
         yield return new WaitForSeconds(timeout); // Таймаут
         yield return Fade(0, 1); // Затемнение
         SceneManager.LoadScene("Menu");

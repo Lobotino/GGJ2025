@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -13,6 +14,17 @@ public class LampState : MonoBehaviour
     public Sprite greenSprite;
     public Sprite redSprite;
     public Sprite yellowSprite;
+
+    public AudioSource goodAudioSource;
+    public AudioSource badAudioSource;
+
+    private void Start()
+    {
+        if (FreeGameData.IsFreeGameEnabled)
+        {
+            TurnGreen();
+        }
+    }
 
     public void UpdateState(int newState)
     {
@@ -49,12 +61,19 @@ public class LampState : MonoBehaviour
 
     public void BlinkGreen()
     {
+        goodAudioSource.Play();
         StartCoroutine(BlinkLong(1));
     }
 
     public void BlinkRed()
     {
+        badAudioSource.Play();
         StartCoroutine(BlinkLong(2));
+    }
+
+    public void TurnGreen()
+    {
+        UpdateState(1);
     }
 
     /// <summary>
