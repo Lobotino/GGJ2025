@@ -15,7 +15,9 @@ public class InstructionsGenerator : MonoBehaviour
     public GameObject bubbleObject;
     public LampState instructionsLampStateUpdater;
 
-    private readonly int[][,] _correctInstructions =
+    public GameController gameController;
+
+    private static readonly int[][,] _correctInstructions =
     {
         new[,] //наушники
         {
@@ -110,11 +112,21 @@ public class InstructionsGenerator : MonoBehaviour
         },
     };
 
+    private int[,] freeGameArray = new int[,]
+    {
+        { 1, 1, 1, 1, 1, 1 },
+        { 1, 1, 1, 1, 1, 1 },
+        { 1, 1, 1, 1, 1, 1 },
+        { 1, 1, 1, 1, 1, 1 },
+        { 1, 1, 1, 1, 1, 1 },
+    };
+
     private GameObject currentBubbleField = null;
     private float hexRadius;
 
     private void Start()
     {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
         // Вычисляем размер ячейки на основе размера первого объекта
         if (bubbleObject != null)
         {
@@ -125,8 +137,15 @@ public class InstructionsGenerator : MonoBehaviour
             }
         }
 
-        // Запуск корутины
-        StartCoroutine(GenerateInstructionsPeriodically());
+        if (FreeGameData.IsFreeGameEnabled)
+        {
+            GenerateField(freeGameArray);
+        }
+        else
+        {
+            // Запуск корутины
+            StartCoroutine(GenerateInstructionsPeriodically());
+        }
     }
 
     private int _currentInstructionsIndex = 0;
@@ -134,6 +153,11 @@ public class InstructionsGenerator : MonoBehaviour
     public int[,] GetCurrentInstructions()
     {
         return _correctInstructions[_currentInstructionsIndex];
+    }
+
+    public int GetCurrentInstructionsIndex()
+    {
+        return _currentInstructionsIndex;
     }
 
     private IEnumerator GenerateInstructionsPeriodically()
@@ -160,7 +184,7 @@ public class InstructionsGenerator : MonoBehaviour
         var lastIndex = _currentInstructionsIndex;
         var nextIndex = lastIndex;
 
-        while (nextIndex == lastIndex)
+        while (nextIndex == lastIndex || gameController.alreadyCompletedFormsIndexes.Contains(nextIndex))
         {
             nextIndex = Random.Range(0, _correctInstructions.Length);
         }

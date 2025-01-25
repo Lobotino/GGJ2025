@@ -27,7 +27,11 @@ public class BlinkedBoss : MonoBehaviour
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         // Запускаем корутину для мигания света
-        StartCoroutine(BlinkBoss());
+
+        if (!FreeGameData.IsFreeGameEnabled)
+        {
+            StartCoroutine(BlinkBoss());
+        }
     }
 
     public void OnPoppedOnBossEyes()

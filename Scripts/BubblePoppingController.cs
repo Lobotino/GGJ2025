@@ -9,6 +9,8 @@ public class BubblePoppingController : MonoBehaviour
 
     private int rightPopsCountInInstruction = 0;
 
+    public int currentInstructionsIndex;
+    
     public void Start()
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
@@ -27,7 +29,7 @@ public class BubblePoppingController : MonoBehaviour
         }
         else
         {
-            gameController.OnSuccessPopsFinish();
+            gameController.OnSuccessPopsFinish(currentInstructionsIndex);
         }
 
         gameController.AddTotalScore(rightPoppedBubblesCount);
@@ -41,5 +43,10 @@ public class BubblePoppingController : MonoBehaviour
     public void OnPoppedWrong()
     {
         wrongPoppedBubblesCount++;
+    }
+
+    public void SetPopSchemeIndex(int currentInstructionsIndex)
+    {
+        this.currentInstructionsIndex = currentInstructionsIndex;
     }
 }

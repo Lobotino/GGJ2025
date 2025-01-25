@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ScreenFadeEndGame : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class ScreenFadeEndGame : MonoBehaviour
         yield return Fade(1, 0); // Раззатемнение
         yield return new WaitForSeconds(timeout); // Таймаут
         yield return Fade(0, 1); // Затемнение
+        SceneManager.LoadScene("Menu");
     }
 
     // Плавное затемнение/раззатемнение

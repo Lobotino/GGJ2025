@@ -53,7 +53,7 @@ public class BubbleFieldGenerator : MonoBehaviour
             GenerateField(instructionsGenerator.GetCurrentInstructions());
 
             // Ждём указанное время
-            yield return new WaitForSeconds(createBubblesInterval);
+            yield return new WaitForSeconds(FreeGameData.IsFreeGameEnabled ? 2.5f : createBubblesInterval);
         }
     }
 
@@ -99,5 +99,6 @@ public class BubbleFieldGenerator : MonoBehaviour
         }
 
         currentBubbleField.GetComponent<BubblePoppingController>().SetRightPopsCount(rightBubblesCount);
+        currentBubbleField.GetComponent<BubblePoppingController>().SetPopSchemeIndex(instructionsGenerator.GetCurrentInstructionsIndex());
     }
 }

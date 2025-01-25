@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,8 +14,21 @@ public class GameController : MonoBehaviour
 
     private Coroutine reduceCoroutine;
 
+    public ArrayList alreadyCompletedFormsIndexes = new ArrayList();
 
     public LampState finishLamp;
+
+    private void TryAddCompletedFormsIndex(int index)
+    {
+        if (!alreadyCompletedFormsIndexes.Contains(index))
+        {
+            alreadyCompletedFormsIndexes.Add(index);
+            if (alreadyCompletedFormsIndexes.Count >= 5)
+            {
+                GameOverByWin();
+            }
+        }
+    }
 
     public void AddTotalScore(int score)
     {
@@ -23,12 +37,31 @@ public class GameController : MonoBehaviour
 
     public void OnFailedPopsFinish()
     {
-        finishLamp.BlinkRed();
+        if (FreeGameData.IsFreeGameEnabled)
+        {
+            finishLamp.BlinkGreen();
+        }
+        else
+        {
+            finishLamp.BlinkRed();
+        }
     }
 
-    public void OnSuccessPopsFinish()
+    public void OnSuccessPopsFinish(int currentInstructionsIndex)
     {
+        if (!FreeGameData.IsFreeGameEnabled)
+        {
+            TryAddCompletedFormsIndex(currentInstructionsIndex);
+        }
+
         finishLamp.BlinkGreen();
+    }
+
+    public void GameOverByWin()
+    {
+        isConvayerWorks = false;
+        StartReducingConvayer();
+        StartCoroutine(StartGameWin());
     }
 
     public void GameOverByBoss()
@@ -38,9 +71,15 @@ public class GameController : MonoBehaviour
         StartCoroutine(StartGameOver());
     }
 
+    private IEnumerator StartGameWin()
+    {
+        yield return new WaitForSeconds(reduceDuration + 1.5f);
+        SceneManager.LoadScene("GoodEnding");
+    }
+
     private IEnumerator StartGameOver()
     {
-        yield return new WaitForSeconds(reduceDuration + 1f);
+        yield return new WaitForSeconds(reduceDuration + 1.5f);
         SceneManager.LoadScene("BadEnding");
     }
 
