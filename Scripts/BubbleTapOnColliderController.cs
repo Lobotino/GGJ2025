@@ -7,6 +7,7 @@ public class BubbleTapOnColliderController : MonoBehaviour
     private float touchStartTime; // Время начала касания
     public Sprite poppedSprite; // Новый спрайт, который нужно установить
     private SpriteRenderer spriteRenderer;
+    private BlinkedBoss _blinkedBoss;
 
     public BubbleRightLogic bubbleRightLogic;
 
@@ -24,6 +25,7 @@ public class BubbleTapOnColliderController : MonoBehaviour
         bubbleRightLogic = GetComponentInParent<BubbleRightLogic>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         particleSystem = GetComponent<ParticleSystem>();
+        _blinkedBoss = GameObject.Find("BlinkedBoss").GetComponent<BlinkedBoss>();
         if (spriteRenderer == null)
         {
             Debug.LogError("На объекте отсутствует SpriteRenderer!");
@@ -48,6 +50,11 @@ public class BubbleTapOnColliderController : MonoBehaviour
         isPopped = true;
         if (spriteRenderer != null && poppedSprite != null)
         {
+            if (_blinkedBoss.bossIsActive)
+            {
+                _blinkedBoss.OnPoppedOnBossEyes();
+            }
+            
             // Заменяем спрайт
             spriteRenderer.sprite = poppedSprite;
             particleSystem.Play();

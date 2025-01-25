@@ -23,8 +23,11 @@ public class BubbleFieldGenerator : MonoBehaviour
 
     private GameObject currentBubbleField = null;
 
+    private GameController gameController;
+
     private void Start()
     {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
         // Вычисляем размер ячейки на основе размера первого объекта
         if (bubbleObject != null)
         {
@@ -44,7 +47,7 @@ public class BubbleFieldGenerator : MonoBehaviour
     /// </summary>
     private IEnumerator GenerateFieldPeriodically()
     {
-        while (true)
+        while (gameController.isConvayerWorks)
         {
             // Генерируем поле
             GenerateField(instructionsGenerator.GetCurrentInstructions());

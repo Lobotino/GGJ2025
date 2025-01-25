@@ -13,7 +13,7 @@ public class InstructionsGenerator : MonoBehaviour
     public float updateInstructionsInterval = 15f;
     public GameObject bubbleField;
     public GameObject bubbleObject;
-    public LampState lampStateUpdater;
+    public LampState instructionsLampStateUpdater;
 
     private readonly int[][,] _correctInstructions =
     {
@@ -166,7 +166,7 @@ public class InstructionsGenerator : MonoBehaviour
         }
 
         _currentInstructionsIndex = nextIndex;
-        lampStateUpdater.BlinkYellow();
+        instructionsLampStateUpdater.BlinkYellow();
     }
 
     /// <summary>

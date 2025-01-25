@@ -11,10 +11,17 @@ public class ConveyorScript : MonoBehaviour
     // Позиция, где объект исчезает (справа)
     public float endX = 10f;
 
+    private GameController _gameController;
+
+    public void Start()
+    {
+        _gameController = GameObject.Find("GameController").GetComponent<GameController>();
+    }
+
     void FixedUpdate()
     {
         // Двигаем объект влево
-        transform.position += Vector3.right * speed * Time.deltaTime;
+        transform.position += Vector3.right * speed * Time.deltaTime * _gameController.convayerSpeedModifier;
 
         // Если объект пересекает правую границу экрана
         if (transform.position.x > endX)
