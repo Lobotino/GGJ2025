@@ -14,21 +14,11 @@ public class GameController : MonoBehaviour
 
     private Coroutine reduceCoroutine;
 
-    public ArrayList alreadyCompletedFormsIndexes = new ArrayList();
+    public InstructionsGenerator instructionsGenerator;
 
     public LampState finishLamp;
 
-    private void TryAddCompletedFormsIndex(int index)
-    {
-        if (!alreadyCompletedFormsIndexes.Contains(index))
-        {
-            alreadyCompletedFormsIndexes.Add(index);
-            if (alreadyCompletedFormsIndexes.Count >= 5)
-            {
-                GameOverByWin();
-            }
-        }
-    }
+    private int countSuccessScore = 0;
 
     public void AddTotalScore(int score)
     {
@@ -47,11 +37,16 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void OnSuccessPopsFinish(int currentInstructionsIndex)
+    public void OnSuccessPopsFinish()
     {
         if (!FreeGameData.IsFreeGameEnabled)
         {
-            TryAddCompletedFormsIndex(currentInstructionsIndex);
+            instructionsGenerator.ChangeInstructions();
+            countSuccessScore++;
+            if (countSuccessScore > 5)
+            {
+                GameOverByWin();
+            }
         }
 
         finishLamp.BlinkGreen();

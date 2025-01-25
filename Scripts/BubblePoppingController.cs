@@ -23,13 +23,13 @@ public class BubblePoppingController : MonoBehaviour
 
     public void OnBubbleFinishLent()
     {
-        if (rightPopsCountInInstruction - 5 > rightPoppedBubblesCount || wrongPoppedBubblesCount > 5)
+        if (rightPopsCountInInstruction - 5 > rightPoppedBubblesCount || wrongPoppedBubblesCount > 4)
         {
             gameController.OnFailedPopsFinish();
         }
         else
         {
-            gameController.OnSuccessPopsFinish(currentInstructionsIndex);
+            gameController.OnSuccessPopsFinish();
         }
 
         gameController.AddTotalScore(rightPoppedBubblesCount);

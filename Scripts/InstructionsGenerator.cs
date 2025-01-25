@@ -143,8 +143,9 @@ public class InstructionsGenerator : MonoBehaviour
         }
         else
         {
-            // Запуск корутины
-            StartCoroutine(GenerateInstructionsPeriodically());
+            instructionSpriteObject.sprite = instructionSpritesItems[0];
+            GenerateField(_correctInstructions[0]);
+            instructionsLampStateUpdater.BlinkYellow();
         }
     }
 
@@ -160,36 +161,13 @@ public class InstructionsGenerator : MonoBehaviour
         return _currentInstructionsIndex;
     }
 
-    private IEnumerator GenerateInstructionsPeriodically()
+    public void ChangeInstructions()
     {
-        while (true)
-        {
-            // Генерируем поле
-            ChangeInstructions();
-            ChangeInstructionItem();
-            GenerateField(_correctInstructions[_currentInstructionsIndex]);
+        _currentInstructionsIndex += 1;
+        if (_currentInstructionsIndex >= _correctInstructions.Length) _currentInstructionsIndex = 0;
 
-            // Ждём указанное время
-            yield return new WaitForSeconds(updateInstructionsInterval);
-        }
-    }
-
-    private void ChangeInstructionItem()
-    {
         instructionSpriteObject.sprite = instructionSpritesItems[_currentInstructionsIndex];
-    }
-
-    private void ChangeInstructions()
-    {
-        var lastIndex = _currentInstructionsIndex;
-        var nextIndex = lastIndex;
-
-        while (nextIndex == lastIndex || gameController.alreadyCompletedFormsIndexes.Contains(nextIndex))
-        {
-            nextIndex = Random.Range(0, _correctInstructions.Length);
-        }
-
-        _currentInstructionsIndex = nextIndex;
+        GenerateField(_correctInstructions[_currentInstructionsIndex]);
         instructionsLampStateUpdater.BlinkYellow();
     }
 
