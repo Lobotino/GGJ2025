@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
 
     public LampState finishLamp;
 
-    private int countSuccessScore = 0;
+    public int countSuccessScore = 0;
 
     public GameObject freeGameExitDoor;
 

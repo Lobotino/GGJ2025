@@ -19,8 +19,11 @@ public class BubbleTapOnColliderController : MonoBehaviour
     //частицы
     public ParticleSystem particleSystem; // Ссылка на систему частиц
 
+    public FreeModeCounter freeModeCounter;
+
     void Start()
     {
+        freeModeCounter = GameObject.Find("FreeModeCounter").GetComponent<FreeModeCounter>();
         // Получаем SpriteRenderer объекта
         bubblePoppingController = GetComponentInParent<BubblePoppingController>();
         bubbleRightLogic = GetComponentInParent<BubbleRightLogic>();
@@ -72,7 +75,8 @@ public class BubbleTapOnColliderController : MonoBehaviour
             }
 
             PlayerPrefs.SetInt("popsCount", PlayerPrefs.GetInt("popsCount", 0) + 1);
-            PlayerPrefs.Save(); 
+            PlayerPrefs.Save();
+            freeModeCounter.IncrementCounter();
         }
         else
         {
