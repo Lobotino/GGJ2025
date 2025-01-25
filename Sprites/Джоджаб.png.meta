@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e653fe1147d0b48229fc2552db52cfe9
+guid: 313bf99751d1b45c3a04609bf2fa03a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3832833741951704810
-    second: buble-600x600_0
+      213: 4831850028994789065
+    second: "\u0414\u0436\u043E\u0434\u0436\u0430\u0431_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buble-600x600_0
+      name: "\u0414\u0436\u043E\u0434\u0436\u0430\u0431_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 600
-        height: 600
+        width: 1207
+        height: 2043
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61166d7d40a0fcac0800000000000000
-      internalID: -3832833741951704810
+      spriteID: 9cef13a400e2e0340800000000000000
+      internalID: 4831850028994789065
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      buble-600x600_0: -3832833741951704810
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

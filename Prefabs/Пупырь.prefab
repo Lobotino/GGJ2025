@@ -104,7 +104,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poppedSprite: {fileID: 7170814632375328969, guid: f2b54a5bea84d4366b50995f05790d77, type: 3}
+  bubbleRightLogic: {fileID: 0}
   isPopped: 0
+  bubblePoppingController: {fileID: 0}
   particleSystem: {fileID: 4573857322154854634, guid: ff4e2655fcfb34d16a7737989ec28bb2, type: 3}
 --- !u!60 &6358837198822081529
 PolygonCollider2D:
@@ -185,7 +187,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: b797cf10b09e644b7a9c9bbb52d3bbae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -321,7 +323,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -427,8 +429,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.44313726, g: 0.57254905, b: 0.67058825, a: 1}
-      maxColor: {r: 0.93333334, g: 0.95686275, b: 0.98039216, a: 1}
+      minColor: {r: 0.8329477, g: 0.88271976, b: 0.9245283, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -816,7 +818,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.05
       minScalar: 0
       maxCurve:
         serializedVersion: 2

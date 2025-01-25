@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &177972232
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &302491430
@@ -621,7 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &397994314
@@ -761,7 +761,7 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.3647059, g: 0.4627451, b: 0.7058824, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -787,7 +787,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -812,7 +812,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -50}
+  m_LocalPosition: {x: 0, y: 0.43, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -831,8 +831,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topPosition: {x: 0, y: 10, z: -50}
-  bottomPosition: {x: 0, y: 0, z: -50}
-  smoothSpeed: 2
+  bottomPosition: {x: 0, y: 0.43, z: -50}
+  smoothSpeed: 4
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,7 +890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &520066329
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &531086889
@@ -1096,7 +1096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &585424845
@@ -1199,7 +1199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &599392498
@@ -1473,7 +1473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &987907213
@@ -1561,7 +1561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &1040182977
@@ -1817,7 +1817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &1393260830
@@ -2181,7 +2181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &1640590992
@@ -2284,7 +2284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &1831930968
@@ -2398,7 +2398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &1894340278
@@ -2501,7 +2501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &1905459834
@@ -2604,7 +2604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &1913524474
@@ -2707,7 +2707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &1930968349
@@ -2810,7 +2810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912072ee62f3344058b54083fd574032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   startX: -16.9
   endX: 12
 --- !u!212 &1972210054
@@ -3002,6 +3002,10 @@ PrefabInstance:
       propertyPath: lampStateUpdater
       value: 
       objectReference: {fileID: 142671150}
+    - target: {fileID: 1226782660267654204, guid: 8b5c788366b7d4cbf963a010a2e5f94c, type: 3}
+      propertyPath: updateInstructionsInterval
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4014965181625364312, guid: 8b5c788366b7d4cbf963a010a2e5f94c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.92
@@ -3069,7 +3073,7 @@ PrefabInstance:
       objectReference: {fileID: 142671150}
     - target: {fileID: 1773098594665690030, guid: 4354ec96a6104463b90d9a0ec424681d, type: 3}
       propertyPath: createBubblesInterval
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1773098594665690030, guid: 4354ec96a6104463b90d9a0ec424681d, type: 3}
       propertyPath: instructionsGenerator

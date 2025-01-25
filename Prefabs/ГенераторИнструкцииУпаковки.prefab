@@ -138,6 +138,14 @@ MonoBehaviour:
   instructionSpritesItems:
   - {fileID: -2710618932912824625, guid: 3a864999e0444425b8b8c6b9f0e4cd51, type: 3}
   - {fileID: 402415012484898305, guid: ccac1a8c708b643998ddd1990ccb4d26, type: 3}
+  - {fileID: -1016598428259687265, guid: cb489490a6c134648a3104b8b7ed5ff1, type: 3}
+  - {fileID: 8961143165467717828, guid: 4709e683e025f4c04a751770e0647260, type: 3}
+  - {fileID: 4963408050266265150, guid: b67299f111f3d4de5ba66e4211ec72d5, type: 3}
+  - {fileID: -8804783980236045272, guid: 1bf7fba2833d94dbeb27eff35899dd3c, type: 3}
+  - {fileID: 239564737561094387, guid: 9a5bfee26b26c49c2acebae53f5d824c, type: 3}
+  - {fileID: -5105217642492842195, guid: b5cfa0e6ddb514364a3d103598850602, type: 3}
+  - {fileID: 3816945713446618277, guid: 793712d0666df429fa169d0ab15de915, type: 3}
+  - {fileID: 7895149997434016648, guid: 348f55869ea8d4458aac885a446c4ddf, type: 3}
   instructionSpriteObject: {fileID: 2735739110958366490}
   updateInstructionsInterval: 15
   bubbleField: {fileID: 4624385283912200005, guid: 01b024d1eaac84defa5040bf56f9595a, type: 3}

@@ -17,21 +17,96 @@ public class InstructionsGenerator : MonoBehaviour
 
     private readonly int[][,] _correctInstructions =
     {
-        new[,]
+        new[,] //наушники
         {
-            { 0, 0, 1, 1, 1, 1 },
+            { 0, 0, 1, 1, 0, 0 },
+            { 0, 1, 0, 1, 0, 0 },
             { 0, 1, 0, 0, 1, 0 },
-            { 0, 0, 1, 0, 0, 1 },
-            { 0, 1, 0, 0, 1, 0 },
+            { 0, 1, 0, 1, 0, 0 },
             { 0, 0, 0, 0, 0, 0 },
         },
-        new[,]
+        new[,] //зонт
         {
             { 0, 0, 0, 0, 1, 1 },
             { 0, 0, 1, 1, 1, 0 },
-            { 0, 0, 1, 1, 1, 0 },
+            { 0, 1, 1, 1, 1, 0 },
             { 1, 1, 1, 0, 0, 0 },
             { 1, 1, 0, 0, 0, 0 },
+        },
+        new[,] //кораблик
+        {
+            { 0, 0, 0, 1, 0, 0 },
+            { 0, 0, 1, 1, 0, 0 },
+            { 0, 0, 0, 1, 0, 0 },
+            { 1, 1, 1, 1, 1, 0 },
+            { 0, 1, 1, 1, 1, 0 },
+        },
+
+        new[,] //чемодан
+        {
+            { 0, 0, 1, 1, 0, 0 },
+            { 1, 1, 1, 1, 1, 0 },
+            { 1, 1, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 1, 0 },
+            { 0, 0, 0, 0, 0, 0 },
+        },
+
+        new[,] //яблочко
+        {
+            { 0, 0, 1, 1, 1, 0 },
+            { 0, 1, 1, 1, 0, 0 },
+            { 0, 1, 1, 1, 1, 0 },
+            { 0, 1, 1, 1, 0, 0 },
+            { 0, 0, 1, 1, 0, 0 },
+        },
+
+        new[,] //грибочек
+        {
+            { 0, 1, 1, 1, 0, 0 },
+            { 1, 1, 1, 0, 0, 0 },
+            { 0, 1, 1, 1, 1, 0 },
+            { 0, 1, 0, 1, 1, 0 },
+            { 0, 0, 0, 0, 0, 0 },
+        },
+
+
+        new[,] //гитара
+        {
+            { 0, 0, 0, 0, 1, 1 },
+            { 1, 1, 1, 1, 1, 0 },
+            { 0, 1, 1, 1, 0, 0 },
+            { 0, 1, 1, 0, 0, 0 },
+            { 0, 0, 1, 0, 0, 0 },
+        },
+
+
+        new[,] //черпак
+        {
+            { 0, 1, 1, 0, 0, 0 },
+            { 1, 0, 1, 0, 0, 0 },
+            { 0, 0, 0, 1, 1, 0 },
+            { 0, 0, 0, 1, 1, 0 },
+            { 0, 0, 0, 0, 0, 0 },
+        },
+
+
+        new[,] //ножницы
+        {
+            { 0, 0, 1, 0, 0, 0 },
+            { 0, 1, 1, 0, 0, 0 },
+            { 0, 1, 1, 1, 0, 0 },
+            { 0, 0, 0, 1, 0, 0 },
+            { 0, 0, 0, 0, 0, 0 },
+        },
+
+
+        new[,] //ведро
+        {
+            { 0, 0, 1, 1, 0, 0 },
+            { 0, 1, 1, 1, 0, 0 },
+            { 0, 1, 1, 1, 1, 0 },
+            { 0, 1, 1, 1, 0, 0 },
+            { 0, 0, 0, 0, 0, 0 },
         },
     };
 
@@ -82,15 +157,15 @@ public class InstructionsGenerator : MonoBehaviour
 
     private void ChangeInstructions()
     {
-        if (_currentInstructionsIndex + 1 >= _correctInstructions.Length)
+        var lastIndex = _currentInstructionsIndex;
+        var nextIndex = lastIndex;
+
+        while (nextIndex == lastIndex)
         {
-            _currentInstructionsIndex = 0;
-        }
-        else
-        {
-            _currentInstructionsIndex++;
+            nextIndex = Random.Range(0, _correctInstructions.Length);
         }
 
+        _currentInstructionsIndex = nextIndex;
         lampStateUpdater.BlinkYellow();
     }
 

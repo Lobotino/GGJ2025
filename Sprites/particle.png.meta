@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: e653fe1147d0b48229fc2552db52cfe9
+guid: 9f1753d0edf8043d0921fbc7e4c1a92d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3832833741951704810
-    second: buble-600x600_0
+      213: 6529992565953176737
+    second: particle_0
+  - first:
+      213: 8953772972351659839
+    second: particle_1
+  - first:
+      213: -5258690764220749821
+    second: particle_2
+  - first:
+      213: 1677388449156296112
+    second: particle_3
+  - first:
+      213: 4868785843396006557
+    second: particle_4
+  - first:
+      213: 4589903271098483578
+    second: particle_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buble-600x600_0
+      name: particle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 600
-        height: 600
+        x: 7
+        y: 40
+        width: 26
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +156,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61166d7d40a0fcac0800000000000000
-      internalID: -3832833741951704810
+      spriteID: 1a4a49f24a13f9a50800000000000000
+      internalID: 6529992565953176737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 34
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f93884411324c70800000000000000
+      internalID: 8953772972351659839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle_2
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 36
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 308aef69c906507b0800000000000000
+      internalID: -5258690764220749821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle_3
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 8
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bded4648e7474710800000000000000
+      internalID: 1677388449156296112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle_4
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 3
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d92d11bbde6619340800000000000000
+      internalID: 4868785843396006557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 7
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a738a3be4bc92bf30800000000000000
+      internalID: 4589903271098483578
       vertices: []
       indices: 
       edges: []
@@ -161,7 +286,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      buble-600x600_0: -3832833741951704810
+      particle_0: 6529992565953176737
+      particle_1: 8953772972351659839
+      particle_2: -5258690764220749821
+      particle_3: 1677388449156296112
+      particle_4: 4868785843396006557
+      particle_5: 4589903271098483578
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
