@@ -160,8 +160,12 @@ public class InstructionsGenerator : MonoBehaviour
 
     public void ChangeInstructions()
     {
-        _currentInstructionsIndex += 1;
-        if (_currentInstructionsIndex >= _correctInstructions.Length) _currentInstructionsIndex = 0;
+        var lastIndex = _currentInstructionsIndex;
+        while (_currentInstructionsIndex == lastIndex)
+        {
+            _currentInstructionsIndex = Random.Range(0, _correctInstructions.Length);
+            Debug.Log("Test next random " + _currentInstructionsIndex);
+        }
 
         instructionSpriteObject.sprite = instructionSpritesItems[_currentInstructionsIndex];
         GenerateField(_correctInstructions[_currentInstructionsIndex]);
