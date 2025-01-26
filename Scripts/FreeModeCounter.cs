@@ -18,7 +18,15 @@ public class FreeModeCounter : MonoBehaviour
             return;
         }
 
-        counter++;
+        if (counter >= 999)
+        {
+            counter = 0;
+        }
+        else
+        {
+            counter++;
+        }
+
         UpdateSprites();
     }
 

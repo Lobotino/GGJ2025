@@ -7,10 +7,33 @@ public class GameLogicScript : MonoBehaviour
     public Vector3 bottomPosition; // Нижнее положение камеры
     public float smoothSpeed = 2f; // Скорость плавного перемещения камеры
 
-    private bool isInTopPosition = false; // Флаг текущего состояния камеры
+    private bool isInTopPosition = true; // Флаг текущего состояния камеры
+
+    public float startSmoothDuration = 2f; // Длительность анимации
+    private bool isStartMoving = false; // Флаг, блокирующий движение
+
+    private System.Collections.IEnumerator SmoothMoveCamera(float duration)
+    {
+        isStartMoving = true;
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration;
+            transform.position = Vector3.Lerp(topPosition, bottomPosition, t);
+            yield return null;
+        }
+
+        transform.position = bottomPosition; // Убедимся, что позиция точно совпадает
+        isStartMoving = false; // Разблокируем движение
+        isInTopPosition = false;
+    }
 
     void Start()
     {
+        StartCoroutine(SmoothMoveCamera(startSmoothDuration));
         // Проверяем наличие гироскопа
         if (SystemInfo.supportsGyroscope)
         {
@@ -22,12 +45,12 @@ public class GameLogicScript : MonoBehaviour
         }
 
         // Устанавливаем начальное положение камеры
-        transform.position = bottomPosition;
+        // transform.position = topPosition;
     }
 
     void Update()
     {
-        if (!SystemInfo.supportsGyroscope)
+        if (!SystemInfo.supportsGyroscope || isStartMoving)
             return;
 
         // Получаем текущий угол поворота телефона по оси X
