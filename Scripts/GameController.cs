@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Firebase.Analytics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -70,12 +71,14 @@ public class GameController : MonoBehaviour
 
     private IEnumerator StartGameWin()
     {
+        FirebaseAnalytics.LogEvent("game_win");
         yield return new WaitForSeconds(reduceDuration + 1.5f);
         SceneManager.LoadScene("GoodEnding");
     }
 
     private IEnumerator StartGameOver()
     {
+        FirebaseAnalytics.LogEvent("game_over");
         yield return new WaitForSeconds(reduceDuration + 1.5f);
         SceneManager.LoadScene("BadEnding");
     }

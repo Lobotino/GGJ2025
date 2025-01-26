@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Firebase.Analytics;
 
 public class BubbleTapOnColliderController : MonoBehaviour
 {
@@ -56,6 +57,8 @@ public class BubbleTapOnColliderController : MonoBehaviour
         audioSource.Play();
         if (spriteRenderer != null && poppedSprite != null)
         {
+            FirebaseAnalytics.LogEvent("pop");
+            
             if (_blinkedBoss.bossIsActive)
             {
                 _blinkedBoss.OnPoppedOnBossEyes();
@@ -67,10 +70,12 @@ public class BubbleTapOnColliderController : MonoBehaviour
             Vibrate();
             if (bubbleRightLogic.isBubbleRight)
             {
+                FirebaseAnalytics.LogEvent("pop_right");
                 bubblePoppingController.OnPoppedRight();
             }
             else
             {
+                FirebaseAnalytics.LogEvent("pop_wrong");
                 bubblePoppingController.OnPoppedWrong();
             }
 

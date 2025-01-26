@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "365363427935",
+    "project_id": "ggj2025-ca4ce",
+    "storage_bucket": "ggj2025-ca4ce.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365363427935:android:5baff4f16379e22b4139ea",
+        "android_client_info": {
+          "package_name": "ru.ggj2025"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhiGoYTPBc_7dNNvn3HkFFDI0OLYrZSy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
