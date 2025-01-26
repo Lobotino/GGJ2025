@@ -4,28 +4,23 @@ using UnityEngine;
 
 public class UserGuideScript : MonoBehaviour
 {
-    public float timerInSeconds = 6;
+    public GameObject nextSlide;
 
     void Start()
     {
         if (FreeGameData.IsFreeGameEnabled)
         {
             Destroy(gameObject);
-            return;
         }
-
-        StartCoroutine(DestroyWithDelay());
-    }
-
-    // Update is called once per frame
-    private IEnumerator DestroyWithDelay()
-    {
-        yield return new WaitForSeconds(timerInSeconds);
-        Destroy(gameObject);
     }
 
     void OnMouseDown()
     {
+        if (nextSlide != null)
+        {
+            nextSlide.SetActive(true);
+        }
+
         Destroy(gameObject);
     }
 }
